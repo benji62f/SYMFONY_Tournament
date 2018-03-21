@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome!{% endblock %}
+
+{#{% block stylesheets %}#}
+
+{#{% endblock %}#}
+
+{% block body %}
+    <h1>Tournaments management</h1>
+
+    <p>{{ message | raw }}</p>
+
+    <ul>
+        {% for tournament in tournaments %}
+            <li>{{ tournament.name }}</li>
+        {% else %}
+            No tournament yet
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        $('#menu-homepage').addClass('active');
+    </script>
+{% endblock %}
